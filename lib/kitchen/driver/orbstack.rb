@@ -14,7 +14,7 @@ module Kitchen
       default_config :port, "22"
 
       def create(state)
-        puts instance.to_str
+        debug(instance.to_str)
         run_command('orbctl create -a arm64 ubuntu:jammy kitchen-1')
         state[:hostname] = "#{orb_config['name']}@orb"
         state[:port] = 22
