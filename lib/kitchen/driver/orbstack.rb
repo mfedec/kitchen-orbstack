@@ -14,11 +14,9 @@ module Kitchen
       default_config :port, "22"
 
       def create(state)
-        debug(instance.to_str)
         run_command("orbctl create -a arm64 ubuntu:jammy #{instance.name}")
         state[:hostname] = "#{orb_config['name']}@orb"
         state[:port] = 22
-        # state[:username] = 'kitchen-1'
         # instance.transport.connection(state).wait_until_ready
         info("Orbstack instance created.")
       end
