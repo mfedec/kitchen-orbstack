@@ -15,7 +15,7 @@ module Kitchen
 
       def create(state)
         debug(instance.to_str)
-        run_command('orbctl create -a arm64 ubuntu:jammy kitchen-1')
+        run_command("orbctl create -a arm64 ubuntu:jammy -f #{instance.name}")
         state[:hostname] = "#{orb_config['name']}@orb"
         state[:port] = 22
         # state[:username] = 'kitchen-1'
@@ -26,7 +26,7 @@ module Kitchen
       def destroy(state)
         return if state[:hostname].nil?
 
-        run_command('orbctl delete -f kitchen-1')
+        run_command("orbctl delete -f #{instance.name}")
         # info("Orbstack instance #{} destroyed.")
         state.delete(:hostname)
       end
