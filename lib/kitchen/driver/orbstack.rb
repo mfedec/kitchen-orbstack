@@ -15,7 +15,7 @@ module Kitchen
 
       def create(state)
         debug(instance.to_str)
-        run_command("orbctl create -a arm64 ubuntu:jammy -f #{instance.name}")
+        run_command("orbctl create -a arm64 ubuntu:jammy #{instance.name}")
         state[:hostname] = "#{orb_config['name']}@orb"
         state[:port] = 22
         # state[:username] = 'kitchen-1'
