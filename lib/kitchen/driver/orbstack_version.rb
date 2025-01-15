@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 #
-# Author:: Greg Fitzgerald (<greg@gregf.org>)
+# Author:: Martin Fedec (<martin.fedec@gmail.com>)
 #
-# Copyright (C) 2013, Greg Fitzgerald
+# Copyright (C) 2025, Martin Fedec
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

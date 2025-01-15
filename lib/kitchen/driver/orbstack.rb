@@ -30,7 +30,7 @@ module Kitchen
       end
 
       def orb_config
-        json = run_command("orbctl info #{instance.name} -f json", {live_stream: nil})
+        json = run_command("orbctl info #{instance.name} -f json", { live_stream: nil })
         JSON.parse(json)
       end
     end
