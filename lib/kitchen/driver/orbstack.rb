@@ -17,15 +17,15 @@ module Kitchen
         run_command("orbctl create -a arm64 ubuntu:jammy #{instance.name}")
         state[:hostname] = "#{orb_config['name']}@orb"
         state[:port] = 22
-        # instance.transport.connection(state).wait_until_ready
-        info("Orbstack instance created.")
+        instance.transport.connection(state).wait_until_ready
+        info("Orbstack instance #{instance.name} created.")
       end
 
       def destroy(state)
         return if state[:hostname].nil?
 
         run_command("orbctl delete -f #{instance.name}")
-        # info("Orbstack instance #{} destroyed.")
+        info("Orbstack instance #{instance.name} destroyed.")
         state.delete(:hostname)
       end
 
